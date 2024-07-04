@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Estoque</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px; /* Limita a largura máxima do conteúdo */
+        }
+        .section-header {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .form-section {
+            margin-bottom: 15px;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-section input {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        thead {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .menu-button {
+            display: block;
+            width: 100px;
+            padding: 10px;
+            margin: 15px auto;
+            text-align: center;
+            background-color: black;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-header">Gestão de Estoque</div>
+        <div class="form-section">
+            <label for="numeroProduto">Número do Produto:</label>
+            <input type="text" id="numeroProduto" name="numeroProduto" required>
+        </div>
+        <div class="form-section">
+            <label for="nomeProduto">Nome do Produto:</label>
+            <input type="text" id="nomeProduto" name="nomeProduto" required>
+        </div>
+        <div class="form-section">
+            <label for="quantidade">Quantidade:</label>
+            <input type="text" id="quantidade" name="quantidade" required>
+        </div>
+        <div class="form-section">
+            <label for="fornecedor">Fornecedor:</label>
+            <input type="text" id="fornecedor" name="fornecedor" required>
+        </div>
+        <div class="form-section">
+            <button type="button" onclick="adicionarProduto()">Adicionar Produto</button>
+        </div>
+
+        <hr>
+
+        <div class="section-header">Lista de Produtos em Estoque</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Número do Produto</th>
+                    <th>Nome do Produto</th>
+                    <th>Quantidade</th>
+                    <th>Fornecedor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaEstoque">
+                <!-- Aqui serão inseridas as linhas da tabela dinamicamente -->
+            </tbody>
+        </table>
+
+        <a href="menu.html" class="menu-button">Voltar</a>
+    </div>
+
+    <script src="estoque.js"></script>
+</body>
+</html>
+
