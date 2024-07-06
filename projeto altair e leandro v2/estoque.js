@@ -58,7 +58,18 @@ function carregarProdutosEstoque() {
     produtosEstoque.forEach(produto => adicionarProdutoATabelaEstoque(produto));
 }
 
-
+function adicionarProdutoATabelaEstoque(produto) {
+    const tabelaEstoque = document.getElementById('tabelaEstoque');
+    const novaLinha = document.createElement('tr');
+    novaLinha.innerHTML = `
+        <td>${produto.numero}</td>
+        <td>${produto.nome}</td>
+        <td>${produto.quantidade}</td>
+        <td>${produto.fornecedor}</td>
+        <td><button class="excluir-button">Excluir</button></td>
+    `;
+    tabelaEstoque.appendChild(novaLinha);
+}
 
 
 carregarProdutosEstoque(); 
